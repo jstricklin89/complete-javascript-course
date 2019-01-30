@@ -1,6 +1,6 @@
 ///////////////////////////////////////
 // Lecture: Hoisting
-calculateAge(1965);
+// calculateAge(1965);
 
 //function declaration
 function calculateAge(year) {
@@ -16,7 +16,7 @@ var retirement = function(year) {
 
 //variables
 
-console.log(age);
+// console.log(age);
 var age = 23;
 
 function foo() {
@@ -25,28 +25,26 @@ function foo() {
   console.log(age);
 }
 
-foo();
-console.log(age);
+// foo();
+// console.log(age);
 
 ///////////////////////////////////////
 // Lecture: Scoping
 
 // First scoping example
 
-/*
-var a = 'Hello!';
+var a = "Hello!";
 first();
 
 function first() {
-    var b = 'Hi!';
-    second();
+  var b = "Hi!";
+  second();
 
-    function second() {
-        var c = 'Hey!';
-        console.log(a + b + c);
-    }
+  function second() {
+    var c = "Hey!";
+    console.log(a + b + c);
+  }
 }
-*/
 
 // Example to show the differece between execution stack and scope chain
 
