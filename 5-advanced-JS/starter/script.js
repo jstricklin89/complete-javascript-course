@@ -59,33 +59,53 @@ var jane = Object.create(personProto, {
 //Primitives vs objects
 
 //Primitives
-var a = 23;
-var b = a;
-a = 46;
-console.log(a);
-console.log(b);
-//Objects
-var obj1 = {
-  name: "John",
-  age: 26
-};
-var obj2 = obj1;
-obj1.age = 30;
-console.log(obj1.age);
-console.log(obj2.age);
-//Functions
-var age = 27;
-var obj = {
-  name: "Jonas",
-  city: "Lisbon"
-};
+// var a = 23;
+// var b = a;
+// a = 46;
+// console.log(a);
+// console.log(b);
+// //Objects
+// var obj1 = {
+//   name: "John",
+//   age: 26
+// };
+// var obj2 = obj1;
+// obj1.age = 30;
+// console.log(obj1.age);
+// console.log(obj2.age);
+// //Functions
+// var age = 27;
+// var obj = {
+//   name: "Jonas",
+//   city: "Lisbon"
+// };
 
-function change(a, b) {
-  age = 30;
-  b.city = "San Franscisco";
+// function change(a, b) {
+//   age = 30;
+//   b.city = "San Franscisco";
+// }
+
+// change(age, obj);
+
+// console.log(age);
+// console.log(obj.city);
+
+////////////////////////////
+// Lecture: Passing functions as arguements
+
+var years = [1990, 1965, 1937, 2005, 1998];
+
+function arrayCalc(arr, fn) {
+  var arrRes = [];
+  for (var i = 0; i < arr.length; i++) {
+    arrRes.push(fn(arr[i]));
+  }
+  return arrRes;
 }
 
-change(age, obj);
+function calculateAge(el) {
+  return 2016 - el;
+}
 
-console.log(age);
-console.log(obj.city);
+var ages = arrayCalc(years, calculateAge);
+console.log(ages);
